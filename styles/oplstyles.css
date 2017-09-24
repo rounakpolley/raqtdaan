@@ -1,0 +1,124 @@
+body {  position : relative; background-color: #fafafa; }
+ul.nav li.dropdown:hover > ul.dropdown-menu {   display: block;    }
+.affix ~ .container-fluid { position : relative;    top : 30px;  }
+.affix {    top : 0;    width : 100%;    z-index : 9999 !important;  }
+
+#banner-area {  height : 50px;      padding-left: 18vw; 
+                background: url('../graphics/banner-pattern.jpg');
+             }
+#banner-area > h3 { margin-top: 0px; line-height: 50px;    font-size: 45px;}
+#banner-area .name { text-shadow: #ffffff 0px 0px 0px; }
+#banner-area .name-1 {   color: #039eff#039eff; }
+#banner-area .name-2 {   color: #ff0000; }
+.name-1 {   color: #0008d9; }
+.name-2 {   color: #d90000; }
+.name-description { font-size: 20px;   color: #c542ff;     text-shadow: #868686 0px 0px 1px; }
+nav
+{   z-index : 100;      font-size: 17px;    font-family: 'Oswald', sans-serif;
+    background : #000000;
+    background : -webkit-linear-gradient(to right, #434343, #000000);
+    background : linear-gradient(to right, #434343, #000000);
+}
+.navbar-header  {   z-index: 500 !important;}
+.navbar-inverse { color : #ffffff;    }
+.navbar-brand { padding: 0px 15px;  height: 80px;   line-height: 75px;  font-size: 25px;    font-weight: bolder; }
+.navbar {   margin-bottom : 0px;    border-radius : 0px;    border : 0px;   /*border-top : 3px solid #ff9300;*/
+            min-height : 70px;      text-align : left;      padding-left: 8vw;      padding-right: 8vw;   
+        }
+#nav-dropdown {    text-align : center;    letter-spacing: 1px; }
+.navbar-form { margin-top : 23px;       width : 180px;  }
+/*div#startup_nav.navbar-collapse.navbar-right.collapse.in {  overflow-x : hidden;    }*/
+#website_search {   color: #ffffff; background-color: #ff6c00; border: 1px solid #ff6200;   }
+
+.navbar-toggle { margin-top: 23px;      padding: 9px 10px !important;   z-index: 500 !important;    }
+
+@media (min-width: 768px) 
+{   .navbar-nav > li > a /* (80px - line-height of 27px) / 2 = 26.5px */
+    {   padding-top: 26.5px;    padding-bottom: 26.5px;     line-height: 27px;  }
+}
+
+.nav-mobile-slide { right: 0 !important;    left: 40vw !important;  transition :all 0.5s ease-in;}
+@media only screen and (max-width: 767px) 
+{
+    #banner-area {  padding-left: 0vw;  }
+    .name-description { font-size: 15px;    }
+    .navbar-collapse
+    {   position: fixed;  top: 53 px;  height: 100%;   width: 100%;    left: 100vw;   z-index: 50;
+        transition :all 0.5s ease-out;  display: block;     overflow: auto;
+        background : #000000;
+        background : -webkit-linear-gradient(to right, #434343, #000000);
+        background : linear-gradient(to right, #434343, #000000);
+     }
+    nav {   box-shadow: #000000 0px 2px 5px;   }
+    .navbar-nav>li>a    { padding-left: 30px; }
+    .navbar-form        { padding-left: 25px;       margin-left: 0px;   width: 60%; }
+    #nav-dropdown       { padding: 0px;     margin-left: 25px;   text-align : left;  }
+}
+@media only screen and (max-width: 991px) 
+{
+    .navbar{    padding-left: 0vw;      padding-right: 0vw}
+}
+
+#footer-links {   text-align: center; }
+.footer-content { text-align: center;   color: #ffffff;  font-size: 17px; text-shadow: #000000 1px 1px; }
+
+.fixedBackground-footer 
+{
+    background: url('../images/food.jpg');
+    background-attachment: fixed;   background-position:bottom;
+    background-repeat: no-repeat;   background-size: cover;     text-align: center;     color: #ffffff;
+}
+.social-links { margin: 10px 20px 10px 20px; }
+
+
+/*Adjustments for the various parts of modal*/
+#contact-header { margin-top: 30px; font-size: 30px; color: #000000; text-align: center;
+                    font-family: 'Josefin Slab', serif; }
+#visitor-name { margin-top: 10px;   margin-bottom: 5px;}
+#visitor-email { margin-top: 5px;   margin-bottom: 5px;}
+#visitor-msg { margin-top: 5px;   margin-bottom: 20px;}
+
+#visitor-name, #visitor-email, #visitor-msg 
+{   width: 280px;   margin-left : 25px;    font-size: 17px;    padding: 8px;    color: #777777; 
+    border: 1px solid #d1d1d1;      box-shadow: inset 0px 0px 5px rgba(85, 85, 85, 0.15); }
+#contact-form-submit {  width: 280px;    margin-left : 25px;     margin-bottom: 30px;    height: 70px;
+                        background-color: #000000;      color: #ffffff; font-size: 14px;    border: 0px;
+                        text-shadow: 0px 1px 1px #000000;
+                     }
+#contact-form-submit:hover { background-color: #6f00aa;}
+/* for partially visible background around the modal display is set to block when 'contact is clicked'*/
+.modal
+{
+    display : none;         position : fixed;     z-index : 2;
+    padding-top : 150px;     top : 53px;              left : 0;
+    height : 100%;          width : 100%;         background-color: rgba(0,0,0,0.5);
+}
+/*default class on modal div*/
+.modal-content 
+{
+    position : relative;    padding : 10px;     border : 1px solid #777;        border-radius: 0px;
+    width: 350px;           margin : auto;      background-color : #f7f7f7;                                 
+    box-shadow: 0px 4px 8px 0px rgba(3,3,3,0.3);
+    -webkit-animation-name : slideDown;                       -webkit-animation-duration : 1s;
+    animation-name : slideDown;                               animation-duration : 1s
+}
+/*css animations*/
+@-webkit-keyframes slideDown  {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
+@keyframes slideDown          {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
+/*CSS class that is added on clicking 'Feedback' button & removed on clicking 'Done' or 'Close'*/
+.visible                      {   display : block ;             }
+.badge-danger {     background-color: #ff0303; margin-right: -10px; z-index: 5;  padding: 10px; border: 1px solid red; border-radius: 25px; }
+.badge-primary {    background-color: #0394ff; }
+.label-warning {    font-size: 14px; line-height: 30px;}
+/*#contact-label {    padding-top: 8px;   padding-bottom: 6px;}*/
+.panel-success>.panel-heading
+{   background-color: #c9ec30;  padding-top: 15px;      padding-bottom: 15px;       
+    color: white;               text-decoration: none;  border-radius: 0px;
+}
+.panel-success>.panel-heading:hover {   cursor: pointer;    }
+
+
+
+
+
+
