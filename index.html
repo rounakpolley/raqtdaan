@@ -21,6 +21,7 @@
         type="text/javascript"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="100">
+    
     <div id="background-map"></div>
     
     <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="49">
@@ -81,9 +82,74 @@
             </form>
         </div>
     </div>
-    
-    <footer class="container-fluid">
-        <!-- not positioned  BS Split button dropdowns Dropup variation -->
+    <!-- Country State City Blood Group Units Send Request -->
+    <footer class="footer container-fluid">
+        <h4>You Need Blood ...  Search Here ...</h4>
+        <hr />
+        <form id="blood-request">
+            <div id="request-country" class="btn-group dropup">
+                <button type="button" class="btn btn-success">Country</button>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Select Country</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">India</a></li>
+                    <li><a href="#">Nepal</a></li>
+                </ul>
+            </div>
+            <div id="request-state" class="btn-group dropup">
+                <button type="button" class="btn btn-success">State</button>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Select State</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">West Bengal</a></li>
+                    <li><a href="#">Orissa</a></li>
+                </ul>
+            </div>
+            <div id="request-city" class="btn-group dropup">
+                <button type="button" class="btn btn-success">City</button>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Select City</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Kolkata</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                </ul>
+            </div>
+            <div id="request-group" class="btn-group dropup">
+                <button type="button" class="btn btn-success">Blood Group</button>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Select Blood Group</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">O-</a></li>
+                    <li><a href="#">O+</a></li>
+                    <li><a href="#">A-</a></li>
+                    <li><a href="#">A+</a></li>
+                    <li><a href="#">B-</a></li>
+                    <li><a href="#">B+</a></li>
+                    <li><a href="#">AB-</a></li>
+                    <li><a href="#">AB+</a></li>
+                </ul>
+            </div>
+            <div id="request-units" class="btn-group dropup">
+                <button type="button" class="btn btn-success">Units</button>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                    <span class="sr-only">Select Units</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">20</a></li>
+                </ul>
+            </div>
+            <button type="submit" class="btn btn-danger"> &nbsp;  &nbsp; Send Request &nbsp;  &nbsp; </button>
+        </form>
     </footer>
 
 </body>
