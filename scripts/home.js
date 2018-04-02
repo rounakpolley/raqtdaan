@@ -1,25 +1,23 @@
-$(document).ready(function()
-{
-    $('#hot-event').fadeOut( 1 );
-    $('#hot-event').fadeIn( 2000 );
-    $('#nav-about').click(function(evt)
-    {   evt.preventDefault();   $('html, body').animate({ scrollTop: $('#home-about').offset().top - 120 }, 1000);  });
-    $('#nav-services').click(function(evt)
-    {   evt.preventDefault();   $('html, body').animate({ scrollTop: $('#home-services').offset().top - 70 }, 1000);});
+$(document).ready(function(){   
+    //mobile menu...
+    $('.navbar-toggle').click(function(evt){  
+        $('.navbar-collapse').toggleClass('nav-mobile-slide');
+        $('.navbar-collapse.navbar-right.nav-mobile-slide.collapse.in').css('margin-top', '-52px');
+    });
+    $('[data-toggle="slide-collapse"]').on('click', function(evt){
+        (evt.data('target')).toggle('slide', { direction: "left"  }, 500 );
+    });
     
-    $('#nav-events').click(function(evt)
-    {
-        $('html, body').animate({ scrollTop: $('#event-promotion').offset().top - 100 }, 1000);
-    });
-    //fix the active class of upcoming events
-    $('#explore').click(function(evt)
-    {
+    //contact section nav-events
+    $('#nav-register').click(function(evt){
         evt.preventDefault();
-        $('html, body').animate({ scrollTop: $('#home-about').offset().top - 120 }, 1000);
+        $('#donor-register').toggleClass('visible');
     });
-    $('#hot-event').click(function(evt)
-    {
-        evt.preventDefault();
-        $('html, body').animate({ scrollTop: $('#event-promotion').offset().top - 120 }, 1000);
+    $('.modal').click(function(){
+        $('#donor-register').removeClass('visible');       
+    });                                            
+    $('.modal-content').click(function(evt){
+        evt.stopPropagation();
     });
+
 });
