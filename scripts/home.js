@@ -20,4 +20,18 @@ $(document).ready(function(){
         evt.stopPropagation();
     });
 
+    //---  side nav buttons
+    $('#donors').click(function(evt){
+        $('#donors-contents').toggleClass('hidden');
+    });
+    $('#blood_banks').click(function(evt){
+       $('#blood_banks-contents').toggleClass('hidden');
+    });
+    $('#camps').click(function(evt){
+        $('#camps-contents').toggleClass('hidden');
+    });
+    $('#request_for_blood').click(function(evt){
+        $('#request_for_blood-contents').toggleClass('hidden');
+    });
+
 });

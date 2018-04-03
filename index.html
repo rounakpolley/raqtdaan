@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>                        
                 </button>
                 <a class="navbar-brand" href="#">
-                    <span class="name">Raqtdaan</span>
+                    <span class="name"><img id="logo" src="logo.png"></span>
                 </a>
             </div>
             <div id="nav-toggle-list"><!-- navbar part that gets hidden -->
@@ -56,6 +56,35 @@
             </div>
         </div>
     </nav>    
+
+    <div id="sidetray" class="sidenav">
+        <button id="donors"             type="button" class="btn btn-warning">Donors</button>
+         <div id="donors-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group"><!--hidden-->
+          <button type="button" class="btn btn-primary">O-</button>
+          <button type="button" class="btn btn-primary">O+</button>
+          <button type="button" class="btn btn-primary">A-</button>
+          <button type="button" class="btn btn-primary">A+</button>
+          <button type="button" class="btn btn-primary">B-</button>
+          <button type="button" class="btn btn-primary">B+</button>
+          <button type="button" class="btn btn-primary">AB-</button>
+          <button type="button" class="btn btn-primary">AB+</button>
+        </div>
+
+        <button id="blood_banks"        type="button" class="btn btn-success">Blood Banks</button>
+        <div id="blood_banks-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group">
+          <button type="button" class="btn btn-primary">Link to blood banks</button>
+        </div>
+
+        <button id="camps"              type="button" class="btn btn-info">Camps</button>
+        <div id="camps-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group">
+          <button type="button" class="btn btn-primary">Location of blood donation camps</button>
+        </div>
+
+        <button id="request_for_blood"  type="button" class="btn btn-danger">Requests<br/>for blood</button>
+        <div id="request_for_blood-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group">
+          <button type="button" class="btn btn-primary">Existing requests</button>
+        </div>
+    </div>
 
     <div id="donor-register" class="modal">
         <div class="modal-content">
@@ -148,9 +177,11 @@
                     <li><a href="#">20</a></li>
                 </ul>
             </div>
-            <button type="submit" class="btn btn-danger"> &nbsp;  &nbsp; Send Request &nbsp;  &nbsp; </button>
+            <button type="submit" class="btn btn-danger">Send Request</button>
+            <!-- &nbsp;  &nbsp; Send Request &nbsp;  &nbsp; -->
         </form>
     </footer>
 
 </body>
 </html>
+<!--Email ID*Password*Name*Location*Mobile*Date of Birth (age)*Blood Group(select)WeightLast donation(date) -->

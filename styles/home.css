@@ -1,20 +1,15 @@
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-/*body {  position : relative; background-color: #fafafa; }*/
+html, body {    height: 100%;   margin: 0;  padding: 0;     font-family: Arial, Helvetica, sans-serif;}
+
 ul.nav li.dropdown:hover > ul.dropdown-menu {   display: block;    }
 .affix ~ .container-fluid { position : relative;    top : 30px;  }
 .affix {    top : 0;    width : 100%;    z-index : 9999 !important;  }
 
 nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-serif; */
 .navbar-nav > li > a {padding-top:10px !important; padding-bottom:5px !important;}
-.navbar-inverse .navbar-brand {     color: red;     }
+
+#logo{      height: 50px;   margin-top: -15px;  background-color: whitesmoke;   }
 .navbar-header  {   z-index: 500 !important;}
 .navbar-inverse { background-color : rgba(0,0,0,0.5);    }
-.navbar-brand {  padding: 0px 15px;   line-height: 75px;  font-size: 25px;    font-weight: bolder; }/*height: 80px;*/
 .navbar {   margin-bottom : 0px;    border-radius : 0px;    border : 0px;
             min-height:32px !important      text-align : left;      padding-left: 8vw;      padding-right: 8vw;   
         }
@@ -40,6 +35,8 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
      }
     .navbar-nav > li > a {padding-top:10px !important;  padding-left: 30px; padding-bottom:5px !important;}
     .navbar {min-height:32px !important}
+    .footer > h4            {   padding-left: 0px;  }
+    .footer > #blood-request{   padding-left: 0px;  }
 }
 @media only screen and (max-width: 991px) 
 {
@@ -79,9 +76,12 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
     -webkit-animation-name : slideDown;                       -webkit-animation-duration : 1s;
     animation-name : slideDown;                               animation-duration : 1s
 }/*top: -10vh;             float: right;           margin-right: 10vw;*/
-/*css animations for sliding registrations*/
+/*css animations for sliding registrations, sidenavvv*/
 @-webkit-keyframes slideDown  {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
 @keyframes slideDown          {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
+
+@-webkit-keyframes slideLeft  {   from {left : -10vw; opacity :0}    to {left : 0; opacity : 1}   }
+@keyframes slideLeft          {   from {left : -10vw; opacity :0}    to {left : 0; opacity : 1}   }
 /*CSS class that is added on clicking 'Feedback' button & removed on clicking 'Done' or 'Close'*/
 .visible                      {   display : block ;             }
 
@@ -116,9 +116,26 @@ select.classic:focus
   height: 100vh;    width: 100vw;   position: absolute;     z-index: 0;
   top: 0;           bottom: 0;      left: 0;                right: 0; 
 }
+.hidden       {   display: none;    }
+#sidetray > button  {   position: absolute;     margin-left:10px;   width: 100px;   height:50px;    }
+#sidetray > div     {   position: absolute;     margin-left:120px;  padding-top: 2px;   }
+.sidetray-contents  {   -webkit-animation-name : slideLeft;     -webkit-animation-duration : 0.5s;
+                        animation-name : slideLeft;              animation-duration : 0.5s
+                    }
+
+#donors             {   top: 20vh;    z-index: 2;   }
+#blood_banks        {   top: 30vh;    z-index: 2;   }
+#camps              {   top: 40vh;    z-index: 2;   }
+#request_for_blood  {   top: 50vh;    z-index: 2;   }
+
+#donors-contents            {   top: 20vh;  }
+#blood_banks-contents       {   top: 30vh;  }
+#camps-contents             {   top: 40vh;  }
+#request_for_blood-contents {   top: 50vh;  }
 .footer {
    position: fixed;     left: 0;    bottom: 0;      width: 100%;    z-index: 10;    background-color: rgba(0,0,0,0);
 }/*text-align: center;*/
 .footer > h4 {  margin-bottom: 2px; color: red;     text-shadow: 1px 1px white;     padding-left: 140px; }
 .footer > hr {  margin-top: 5px;    margin-bottom: 5px;}
 .footer > #blood-request {  padding-left: 80px; padding-bottom: 5px;    display: flex; justify-content: space-around; }
+
