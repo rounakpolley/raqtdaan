@@ -44,20 +44,29 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
 }
 
 /*Adjustments for the various parts of modal*/
-#registration-header { margin-top: 30px; font-size: 30px; color: #000000; text-align: center;
+#registration-header { margin-top: 10px; margin-bottom: 5px; font-size: 25px; color: #000000; text-align: center;
                     font-family: 'Josefin Slab', serif; }
-#register-name { margin-top: 10px;   margin-bottom: 5px;}
-#register-email { margin-top: 5px;   margin-bottom: 5px;}
 
-#register-name, #register-email, #register-bloodgroup
+
+#register-name, #register-email, #register-password, #register-location, 
+#register-mobile, #register-dob,   #register-last_donation
 {   width: 280px;   margin-left : 25px;    font-size: 17px;    padding: 8px;    color: #777777; 
     border: 1px solid #d1d1d1;      box-shadow: inset 0px 0px 5px rgba(85, 85, 85, 0.15); 
-
+    margin-bottom: 5px;
 }
-#registration-form-submit {  width: 280px;    margin-left : 25px;     margin-bottom: 30px;    height: 70px;
-                        background-color: #000000;      color: #ffffff; font-size: 14px;    border: 0px;
-                        text-shadow: 0px 1px 1px #000000;
-                     }
+ #register-bloodgroup, #register-weight
+ {
+    font-size: 17px;    padding: 8px;    color: #777777;            margin-bottom: 5px;
+    border: 1px solid #d1d1d1;      box-shadow: inset 0px 0px 5px rgba(85, 85, 85, 0.15); 
+}
+#register-bloodgroup{   width: 146px;   margin-left : 25px;     }
+#register-weight    {   width: 120px;   margin-left : 10px;     }
+#registration-form-submit 
+{  
+    width: 280px;    margin-left : 25px;     margin-bottom: 10px;       margin-top: 5px;     height: 70px;
+    background-color: #000000;      color: #ffffff; font-size: 14px;    border: 0px;
+    text-shadow: 0px 1px 1px #000000;
+}
 #registration-form-submit:hover { background-color: #6f00aa;}
 /* for partially visible background around the modal display is set to block when 'contact is clicked'*/
 .modal

@@ -85,18 +85,35 @@
           <button type="button" class="btn btn-primary">Existing requests</button>
         </div>
     </div>
-
+    
+<!--Email ID*Password*Name*Location*Mobile*Date of Birth (age)*Blood Group(select)WeightLast donation(date) -->
+<!-- add scroll -->
     <div id="donor-register" class="modal">
         <div class="modal-content">
             <form id="registration-form" action="">
-                <header id="registration-header"> -- Register -- </header>
+                <header id="registration-header"> -- Register <small>to</small> Save Lives -- </header>
+
                     <label class="sr-only" for="register-name">Name : </label>
                 <input type="text" name="register-name" id="register-name" placeholder="Name" required autofocus />
+
                     <label class="sr-only" for="register-email">Email : </label>
-                <input type="email" name="register-email" id="register-email" placeholder="Email" required />
+                 <input type="email" name="register-email" id="register-email" placeholder="Email" required />
+
+                    <label class="sr-only" for="register-password">Password : </label>
+                <input type="password" name="register-password" id="register-password" placeholder="Password" required />
+
+                    <label class="sr-only" for="register-location">Location : </label>
+                <input type="text" name="register-location" id="register-location" placeholder="Location" required />
+                    
+                    <label class="sr-only" for="register-mobile">Mobile : </label>
+                <input type="tel" name="register-mobile" id="register-mobile" placeholder="Mobile" required />
+
+                    <label class="sr-only" for="register-dob">D.O.B : </label>
+                <input type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="register-dob" 
+                        id="register-dob" placeholder="D.O.B" required />
+
                     <label class="sr-only" for="register-bloodgroup">Blood Group : </label>
-                 
-                <select id="register-bloodgroup" class="classic btn btn-default">
+                <select id="register-bloodgroup"  name="register-bloodgroup" class="classic btn btn-default">
                     <option value="" disabled>Blood Group</option>
                     <option value="O−">O−</option>
                     <option value="O+">O+</option>
@@ -107,6 +124,14 @@
                     <option value="AB−">AB−</option>
                     <option value="AB+">AB+</option>
                 </select>
+
+                    <label class="sr-only" for="register-weight">Weight : </label>
+                <input type="number" name="register-weight" id="register-weight" placeholder="Weight" required />
+
+                    <label class="sr-only" for="register-last_donation">Last Donation : </label>
+                <input name="register-last_donation" id="register-last_donation" placeholder="Last Donation"  required
+                        type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="register-last_donation" id="register-last_donation"  />
+
                 <button id="registration-form-submit">Signup</button>
             </form>
         </div>
@@ -184,4 +209,3 @@
 
 </body>
 </html>
-<!--Email ID*Password*Name*Location*Mobile*Date of Birth (age)*Blood Group(select)WeightLast donation(date) -->
