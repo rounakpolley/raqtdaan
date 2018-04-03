@@ -27,20 +27,20 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
     #banner-area {  padding-left: 0vw;  }
     .name-description { font-size: 15px;    }
     .navbar-collapse
-    {   position: fixed;  top: 53 px;  height: 100%;   width: 100%;    left: 100vw;   z-index: 50;
+    {   position: fixed;  top: 50px;  height: 100%;   width: 100%;    left: 100vw;   z-index: 50;
         transition :all 0.5s ease-out;  display: block;     overflow: auto;
         background : #000000;
         background : -webkit-linear-gradient(to right, #434343, #000000);
         background : linear-gradient(to right, #434343, #000000);
      }
-    .navbar-nav > li > a {padding-top:10px !important;  padding-left: 30px; padding-bottom:5px !important;}
-    .navbar {min-height:32px !important}
+    .navbar-nav > li > a {  padding-top:10px !important;  padding-left: 30px; padding-bottom:5px !important;    }
+    .navbar {   min-height:32px !important;    }
     .footer > h4            {   padding-left: 0px;  }
     .footer > #blood-request{   padding-left: 0px;  }
 }
 @media only screen and (max-width: 991px) 
 {
-    .navbar{    padding-left: 0vw;      padding-right: 0vw}
+    .navbar{    padding-left: 0vw;      padding-right: 0vw;     }
 }
 
 /*Adjustments for the various parts of modal*/
