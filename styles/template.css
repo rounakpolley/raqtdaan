@@ -1,0 +1,125 @@
+html, body {    height: 100%;   margin: 0;  padding: 0;     font-family: Arial, Helvetica, sans-serif;}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {   display: block;    }
+.affix ~ .container-fluid { position : relative;    top : 30px;  }
+.affix {    top : 0;    width : 100%;    z-index : 9999 !important;  }
+
+nav{   z-index : 100;      font-size: 17px;  }
+.navbar-nav > li > a {padding-top:10px !important; padding-bottom:5px !important;}
+
+#logo{      height: 50px;   margin-top: -15px;  background-color: whitesmoke;   }
+.navbar-header  {   z-index: 500 !important;}
+.navbar-inverse { background-color : rgba(0,0,0,0.5);    }
+.navbar {   margin-bottom : 0px;    border-radius : 0px;    border : 0px;
+            min-height:32px !important      text-align : left;      padding-left: 8vw;      padding-right: 8vw;   
+        }
+
+.navbar-toggle {    padding: 9px 10px !important;   z-index: 500 !important;    }
+.nav-mobile-slide { right: 0 !important;    left: 40vw !important;  transition :all 0.5s ease-in;}
+
+/*Adjustments for the various parts of modal*/
+#registration-header { margin-top: 10px; margin-bottom: 5px; font-size: 25px; color: #000000; text-align: center;
+                    font-family: 'Josefin Slab', serif; }
+
+
+#register-name, #register-email, #register-password, #register-location, 
+#register-mobile, #register-dob,   #register-last_donation
+{   width: 280px;   margin-left : 25px;    font-size: 17px;    padding: 8px;    color: #777777; 
+    border: 1px solid #d1d1d1;      box-shadow: inset 0px 0px 5px rgba(85, 85, 85, 0.15); 
+    margin-bottom: 5px;
+}
+ #register-bloodgroup, #register-weight
+ {
+    font-size: 17px;    padding: 8px;    color: #777777;            margin-bottom: 5px;
+    border: 1px solid #d1d1d1;      box-shadow: inset 0px 0px 5px rgba(85, 85, 85, 0.15); 
+}
+#register-bloodgroup{   width: 146px;   margin-left : 25px;     }
+#register-weight    {   width: 120px;   margin-left : 10px;     }
+#registration-form-submit 
+{  
+    width: 280px;    margin-left : 25px;     margin-bottom: 10px;       margin-top: 5px;     height: 70px;
+    background-color: #000000;      color: #ffffff; font-size: 14px;    border: 0px;
+    text-shadow: 0px 1px 1px #000000;
+}
+#registration-form-submit:hover { background-color: #6f00aa;}
+/* for partially visible background around the modal display is set to block when 'contact is clicked'*/
+.modal
+{
+    display : none;         position : fixed;     z-index : 2;
+    padding-top : 0px;     top : 60px;              left : 0;
+    height : 100%;          width : 100%;         
+}/*background-color: rgba(0,0,0,0.5);*/
+/*default class on modal div*/
+.modal-content 
+{
+    position : relative;    padding : 10px;     border : 1px solid #777;        border-radius: 0px;
+    right: -20vw;
+    width: 350px;           margin : auto;      background-color : #f7f7f7;                                 
+    box-shadow: 0px 4px 8px 0px rgba(3,3,3,0.3);
+    -webkit-animation-name : slideDown;                       -webkit-animation-duration : 1s;
+    animation-name : slideDown;                               animation-duration : 1s
+}/*top: -10vh;             float: right;           margin-right: 10vw;*/
+/*css animations for sliding registrations, sidenavvv*/
+@-webkit-keyframes slideDown  {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
+@keyframes slideDown          {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
+
+@-webkit-keyframes slideLeft  {   from {left : -10vw; opacity :0}    to {left : 0; opacity : 1}   }
+@keyframes slideLeft          {   from {left : -10vw; opacity :0}    to {left : 0; opacity : 1}   }
+/*CSS class that is added on clicking 'Feedback' button & removed on clicking 'Done' or 'Close'*/
+.visible                      {   display : block ;             }
+
+select {
+  /* styling */
+  background-color: white;  border: thin solid red;    border-radius: 4px; display: inline-block;  font: inherit;
+  line-height: 1.5em;   padding: 0.5em 3.5em 0.5em 1em
+  /* reset */
+  margin: 0;      
+  -webkit-box-sizing: border-box;   -moz-box-sizing: border-box;    box-sizing: border-box;
+  -webkit-appearance: none;         -moz-appearance: none;
+}
+select.classic
+{
+  background-image: linear-gradient(45deg, transparent 50%, red 50%), linear-gradient(135deg, red 50%, transparent 50%), linear-gradient(to right, #ff866c, #ff866c);
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;     margin-top: 5px;    margin-bottom: 10px;
+}
+select.classic:focus 
+{
+  background-image: linear-gradient(45deg, white 50%, transparent 50%), linear-gradient(135deg, transparent 50%, white 50%), linear-gradient(to right, gray, gray);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+
+
+#background-map {
+  height: 100vh;    width: 100vw;   position: absolute;     z-index: 0;
+  top: 0;           bottom: 0;      left: 0;                right: 0; 
+}
+.hidden       {   display: none;    }
+#sidetray > button  {   position: absolute;     margin-left:10px;   width: 100px;   height:50px;    }
+#sidetray > div     {   position: absolute;     margin-left:120px;  padding-top: 2px;   }
+.sidetray-contents  {   -webkit-animation-name : slideLeft;     -webkit-animation-duration : 0.5s;
+                        animation-name : slideLeft;              animation-duration : 0.5s
+                    }
+
+#donors             {   top: 20vh;    z-index: 2;   }
+#blood_banks        {   top: 30vh;    z-index: 2;   }
+#camps              {   top: 40vh;    z-index: 2;   }
+#request_for_blood  {   top: 50vh;    z-index: 2;   }
+
+#donors-contents            {   top: 20vh;  }
+#blood_banks-contents       {   top: 30vh;  }
+#camps-contents             {   top: 40vh;  }
+#request_for_blood-contents {   top: 50vh;  }
+.footer {
+   position: fixed;     left: 0;    bottom: 0;      width: 100%;    z-index: 10;    background-color: rgba(0,0,0,0);
+}/*text-align: center;*/
+.footer > h4 {  margin-bottom: 2px; color: red;     text-shadow: 1px 1px white;     padding-left: 140px; }
+.footer > hr {  margin-top: 5px;    margin-bottom: 5px;}
+
+.footer > #blood-request {  padding-left: 80px; padding-bottom: 5px;    display: flex; justify-content: space-around; }
+
