@@ -1,3 +1,66 @@
+<?php session_start();
+    require_once('dbconnection.php');
+
+    //Code for Registration 
+    if(isset($_POST['registration-form-submit'])){
+        //echo "<script>alert('Registering');</script>";
+        $username       =$_POST['register-name'];
+        $email          =$_POST['register-email'];
+        $password       =$_POST['register-password'];
+        $location       =$_POST['register-location'];
+        $mobile         =$_POST['register-mobile'];
+        $dob            =$_POST['register-dob'];
+        $blood_group    =$_POST['register-bloodgroup'];
+        $weight         =$_POST['register-weight'];
+        $last_donation  =$_POST['register-last_donation'];
+        
+        $enc_password   =md5($password);
+        
+        $msg = mysqli_query($con,"insert into users(username,email,password,location,mobile,dob,blood_group,weight,last_donation) values('$username','$email','$enc_password','$location','$mobile','$dob','$blood_group','$weight','$last_donation')");
+        
+        
+        if($msg){
+            echo "<script>alert('Register successfully');</script>";
+            $extra              ="dashboard.php";
+            $_SESSION['login']  =$_POST['register-email'];
+            //$_SESSION['id']     =$num['id'];
+            $host=$_SERVER['HTTP_HOST'];
+            $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+            header("location:http://$host$uri/$extra");
+            exit();
+        }
+    }
+
+    // Code for login system
+    if(isset($_POST['user-login'])){
+        
+        $useremail      =$_POST['user-email'];
+        $password       =$_POST['user-password'];
+        $dec_password   =md5($password);
+        $ret = mysqli_query($con,"SELECT * FROM users WHERE email='$useremail' and password='$dec_password'");
+        $num = mysqli_fetch_array($ret);
+        
+        if($num>0){
+            $extra="dashboard.php";
+            $_SESSION['login']  =$_POST['user-email'];
+            $_SESSION['id']     =$num['id'];
+            //$_SESSION['name']   =$num['fname'];
+            $host=$_SERVER['HTTP_HOST'];
+            $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+            header("location:http://$host$uri/$extra");
+            exit();
+        }
+        else{
+            echo "<script>alert('Invalid username or password');</script>";
+            $extra="index.php";
+            $host  = $_SERVER['HTTP_HOST'];
+            $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
+            //header("location:http://$host$uri/$extra");
+            exit();
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,11 +149,10 @@
         </div>
     </div>
     
-<!--Email ID*Password*Name*Location*Mobile*Date of Birth (age)*Blood Group(select)WeightLast donation(date) -->
 <!-- add scroll -->
     <div id="donor-register" class="modal">
         <div class="modal-content">
-            <form id="registration-form" action="">
+            <form id="registration-form" method="post" action="" enctype="multipart/form-data">
                 <header id="registration-header"> -- Register <small>to</small> Save Lives -- </header>
 
                     <label class="sr-only" for="register-name">Name : </label>
@@ -132,7 +194,7 @@
                 <input name="register-last_donation" id="register-last_donation" placeholder="Last Donation"  required
                         type="text" onfocus="(this.type='date')" onblur="(this.type='text')" name="register-last_donation" id="register-last_donation"  />
 
-                <button id="registration-form-submit">Signup</button>
+                <button id="registration-form-submit" type="submit" name="registration-form-submit" value="registration-form-submit">Signup</button>
             </form>
         </div>
     </div>
