@@ -21,7 +21,7 @@ For media queries
     .navbar-nav > li > a {  padding-top:10px !important;  padding-left: 30px; padding-bottom:5px !important;    }
     .navbar {   min-height:32px !important;    }
     .footer > h4            {   padding-left: 0px;  }
-    .footer > #blood-request{   padding-left: 0px;  display: inline-block; justify-content: space-around;}
+    .footer > #blood-request{   padding-left: 0px;  display: inline; justify-content: space-around;}
 }
 @media only screen and (max-width: 991px) 
 {

@@ -5,16 +5,26 @@ $(document).ready(function(){
         $('.navbar-collapse.navbar-right.nav-mobile-slide.collapse.in').css('margin-top', '-52px');
     });
     $('[data-toggle="slide-collapse"]').on('click', function(evt){
-        (evt.data('target')).toggle('slide', { direction: "left"  }, 500 );
+        console.log(($(evt.target).data('target')));
+        //($(evt.target).data('target')).toggle('slide', { direction: "left"  }, 500 );
+        //($(evt.target).data()).toggle('slide', { direction: "left"  }, 500 );
+        //(evt.data('target')).toggle('slide', { direction: "left"  }, 500 );
     });
-    
-    //contact section nav-events
+    //---
+    //nav-events
     $('#nav-register').click(function(evt){
         evt.preventDefault();
         $('#donor-register').toggleClass('visible');
     });
+    
+    $('#nav-user').click(function(evt){
+        evt.preventDefault();
+        $('#user-login').toggleClass('visible');
+    });
+    
     $('.modal').click(function(){
-        $('#donor-register').removeClass('visible');       
+        $('#donor-register').removeClass('visible');
+        $('#user-login').removeClass('visible');       
     });                                            
     $('.modal-content').click(function(evt){
         evt.stopPropagation();

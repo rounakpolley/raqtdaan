@@ -31,20 +31,20 @@
         }
     }
 
-    // Code for login system
-    if(isset($_POST['user-login'])){
+    // Code for login
+    if(isset($_POST['login-form-submit'])){
         
-        $useremail      =$_POST['user-email'];
-        $password       =$_POST['user-password'];
+        $useremail      =$_POST['login-email'];
+        $password       =$_POST['login-password'];
         $dec_password   =md5($password);
         $ret = mysqli_query($con,"SELECT * FROM users WHERE email='$useremail' and password='$dec_password'");
         $num = mysqli_fetch_array($ret);
         
         if($num>0){
+            
             $extra="dashboard.php";
-            $_SESSION['login']  =$_POST['user-email'];
+            $_SESSION['login']  =$_POST['login-email'];
             $_SESSION['id']     =$num['id'];
-            //$_SESSION['name']   =$num['fname'];
             $host=$_SERVER['HTTP_HOST'];
             $uri=rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
             header("location:http://$host$uri/$extra");
@@ -71,11 +71,12 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
     <link rel="stylesheet" href="styles/home.css" type="text/css">
+    <link rel="stylesheet" href="styles/responsive.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300|Oswald|Rokkitt|Ubuntu" rel="stylesheet">
     <script src="scripts/home.js" type="text/javascript"></script>
     <script src="scripts/map.js" type="text/javascript"></script>
@@ -198,22 +199,27 @@
             </form>
         </div>
     </div>
+    <div id="user-login" class="modal">
+        <div class="modal-content">
+            <form id="login-form" method="post" action="" enctype="multipart/form-data">
+                <header id="login-header"> -- Login -- </header>
+
+                    <label class="sr-only" for="login-email">Email : </label>
+                 <input type="email" name="login-email" id="login-email" placeholder="Email" required />
+
+                    <label class="sr-only" for="login-password">Password : </label>
+                <input type="password" name="login-password" id="login-password" placeholder="Password" required />
+
+                <button id="login-form-submit" type="submit" name="login-form-submit" 
+                        value="login-form-submit">Login</button>
+            </form>
+        </div>
+    </div>
     <!-- Country State City Blood Group Units Send Request -->
     <footer class="footer container-fluid">
         <h4>You Need Blood ...  Search Here ...</h4>
         <hr />
         <form id="blood-request">
-            <div id="request-country" class="btn-group dropup">
-                <button type="button" class="btn btn-success">Country</button>
-                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="caret"></span>
-                    <span class="sr-only">Select Country</span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">India</a></li>
-                    <li><a href="#">Nepal</a></li>
-                </ul>
-            </div>
             <div id="request-state" class="btn-group dropup">
                 <button type="button" class="btn btn-success">State</button>
                 <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

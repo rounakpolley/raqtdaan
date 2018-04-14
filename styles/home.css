@@ -16,44 +16,20 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
 
 .navbar-toggle {    padding: 9px 10px !important;   z-index: 500 !important;    }
 
-@media (min-width: 768px) 
-{   .navbar-nav > li > a /* (80px - line-height of 27px) / 2 = 26.5px */
-    {   padding-top: 26.5px;    padding-bottom: 26.5px;     line-height: 27px;  }
-}
-
-.nav-mobile-slide { right: 0 !important;    left: 40vw !important;  transition :all 0.5s ease-in;}
-@media only screen and (max-width: 767px) 
-{
-    #banner-area {  padding-left: 0vw;  }
-    .name-description { font-size: 15px;    }
-    .navbar-collapse
-    {   position: fixed;  top: 50px;  height: 100%;   width: 100%;    left: 100vw;   z-index: 50;
-        transition :all 0.5s ease-out;  display: block;     overflow: auto;
-        background : #000000;
-        background : -webkit-linear-gradient(to right, #434343, #000000);
-        background : linear-gradient(to right, #434343, #000000);
-     }
-    .navbar-nav > li > a {  padding-top:10px !important;  padding-left: 30px; padding-bottom:5px !important;    }
-    .navbar {   min-height:32px !important;    }
-    .footer > h4            {   padding-left: 0px;  }
-    .footer > #blood-request{   padding-left: 0px;  }
-}
-@media only screen and (max-width: 991px) 
-{
-    .navbar{    padding-left: 0vw;      padding-right: 0vw;     }
-}
-
 /*Adjustments for the various parts of modal*/
-#registration-header { margin-top: 10px; margin-bottom: 5px; font-size: 25px; color: #000000; text-align: center;
-                    font-family: 'Josefin Slab', serif; }
+#registration-header, #login-header 
+{       margin-top: 10px; margin-bottom: 5px; font-size: 25px; color: #000000; text-align: center;
+        font-family: 'Josefin Slab', serif; 
+}
 
 
 #register-name, #register-email, #register-password, #register-location, 
-#register-mobile, #register-dob,   #register-last_donation
+#register-mobile, #register-dob,   #register-last_donation, #login-email, #login-password
 {   width: 280px;   margin-left : 25px;    font-size: 17px;    padding: 8px;    color: #777777; 
     border: 1px solid #d1d1d1;      box-shadow: inset 0px 0px 5px rgba(85, 85, 85, 0.15); 
     margin-bottom: 5px;
 }
+
  #register-bloodgroup, #register-weight
  {
     font-size: 17px;    padding: 8px;    color: #777777;            margin-bottom: 5px;
@@ -61,13 +37,14 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
 }
 #register-bloodgroup{   width: 146px;   margin-left : 25px;     }
 #register-weight    {   width: 120px;   margin-left : 10px;     }
-#registration-form-submit 
+#registration-form-submit, #login-form-submit
 {  
     width: 280px;    margin-left : 25px;     margin-bottom: 10px;       margin-top: 5px;     height: 70px;
     background-color: #000000;      color: #ffffff; font-size: 14px;    border: 0px;
     text-shadow: 0px 1px 1px #000000;
 }
 #registration-form-submit:hover { background-color: #6f00aa;}
+#login-form-submit:hover        { background-color: #6f00aa;}
 /* for partially visible background around the modal display is set to block when 'contact is clicked'*/
 .modal
 {
@@ -79,12 +56,16 @@ nav{   z-index : 100;      font-size: 17px;  }/*   font-family: 'Oswald', sans-s
 .modal-content 
 {
     position : relative;    padding : 10px;     border : 1px solid #777;        border-radius: 0px;
-    right: -20vw;
+    right: -20vw;           max-height: 80vh;   overflow-y: auto;               z-index: 100;
     width: 350px;           margin : auto;      background-color : #f7f7f7;                                 
     box-shadow: 0px 4px 8px 0px rgba(3,3,3,0.3);
     -webkit-animation-name : slideDown;                       -webkit-animation-duration : 1s;
-    animation-name : slideDown;                               animation-duration : 1s
-}/*top: -10vh;             float: right;           margin-right: 10vw;*/
+    animation-name : slideDown;                               animation-duration : 1s;
+}
+#user-login > div
+{
+    float: right;           margin-right: 21vw;/*right: -35vw;*/
+}
 /*css animations for sliding registrations, sidenavvv*/
 @-webkit-keyframes slideDown  {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
 @keyframes slideDown          {   from {top : -100vh; opacity :0}    to {top : 0; opacity : 1}   }
@@ -142,9 +123,9 @@ select.classic:focus
 #camps-contents             {   top: 40vh;  }
 #request_for_blood-contents {   top: 50vh;  }
 .footer {
-   position: fixed;     left: 0;    bottom: 0;      width: 100%;    z-index: 10;    background-color: rgba(0,0,0,0);
+   position: fixed;     left: 0;    bottom: 0;      width: 100%;    z-index: 1;    background-color: rgba(0,0,0,0);
 }/*text-align: center;*/
 .footer > h4 {  margin-bottom: 2px; color: red;     text-shadow: 1px 1px white;     padding-left: 140px; }
 .footer > hr {  margin-top: 5px;    margin-bottom: 5px;}
-.footer > #blood-request {  padding-left: 80px; padding-bottom: 5px;    display: flex; justify-content: space-around; }
+.footer > #blood-request {  padding-bottom: 5px;    display: flex;    justify-content: space-around; }
 
