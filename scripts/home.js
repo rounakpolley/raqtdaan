@@ -5,10 +5,7 @@ $(document).ready(function(){
         $('.navbar-collapse.navbar-right.nav-mobile-slide.collapse.in').css('margin-top', '-52px');
     });
     $('[data-toggle="slide-collapse"]').on('click', function(evt){
-        console.log(($(evt.target).data('target')));
-        //($(evt.target).data('target')).toggle('slide', { direction: "left"  }, 500 );
-        //($(evt.target).data()).toggle('slide', { direction: "left"  }, 500 );
-        //(evt.data('target')).toggle('slide', { direction: "left"  }, 500 );
+        (evt.data('target')).toggle('slide', { direction: "left"  }, 500 );
     });
     //---
     //nav-events

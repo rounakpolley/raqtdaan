@@ -1,6 +1,13 @@
 <?php session_start();
+    $login_err = false;
     require_once('dbconnection.php');
-
+    if(isset($_SESSION['id'])){
+        if($_SESSION['id'] == -1){
+            echo "<script>alert('Invalid username or password');</script>";
+            $_SESSION['id'] = 0;
+            header("Refresh:0");
+        }   
+    }
     //Code for Registration 
     if(isset($_POST['registration-form-submit'])){
         //echo "<script>alert('Registering');</script>";
@@ -20,7 +27,7 @@
         
         
         if($msg){
-            echo "<script>alert('Register successfully');</script>";
+            //echo "<script>alert('Register successfully');</script>";
             $extra              ="dashboard.php";
             $_SESSION['login']  =$_POST['register-email'];
             //$_SESSION['id']     =$num['id'];
@@ -51,11 +58,11 @@
             exit();
         }
         else{
-            echo "<script>alert('Invalid username or password');</script>";
             $extra="index.php";
             $host  = $_SERVER['HTTP_HOST'];
             $uri  = rtrim(dirname($_SERVER['PHP_SELF']),'/\\');
-            //header("location:http://$host$uri/$extra");
+            $_SESSION['id'] = -1;
+            header("location:http://$host$uri/$extra");                
             exit();
         }
     }
@@ -71,7 +78,7 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
