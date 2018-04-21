@@ -13,3 +13,4 @@ if (navigator.geolocation) {
          map.setCenter(initialLocation);
      });
 }
+

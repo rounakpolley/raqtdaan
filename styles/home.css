@@ -123,7 +123,7 @@ select.classic:focus
 #camps-contents             {   top: 40vh;  }
 #request_for_blood-contents {   top: 50vh;  }
 .footer {
-   position: fixed;     left: 0;    bottom: 0;      width: 100%;    z-index: 1;    background-color: rgba(0,0,0,0);
+   position: fixed;     left: 0;    bottom: 0;      width: calc(100% - 30px);    z-index: 1;    background-color: rgba(0,0,0,0);
 }/*text-align: center;*/
 .footer > h4 {  margin-bottom: 2px; color: red;     text-shadow: 1px 1px white;     padding-left: 140px; }
 .footer > hr {  margin-top: 5px;    margin-bottom: 5px;}

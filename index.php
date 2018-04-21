@@ -86,10 +86,12 @@
     <link rel="stylesheet" href="styles/responsive.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300|Oswald|Rokkitt|Ubuntu" rel="stylesheet">
     <script src="scripts/home.js" type="text/javascript"></script>
-    <script src="scripts/map.js" type="text/javascript"></script>
+    <!--<script src="scripts/map.js" type="text/javascript"></script>-->
+    <script src="scripts/map_markers.js" type="text/javascript"></script>
     <script async defer 
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAuXcfGc1ye7Tk85s1uLXi7Op4ak2gl8&callback=initMap"
-        type="text/javascript"></script>
+        type="text/javascript">
+    </script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="100">
     
