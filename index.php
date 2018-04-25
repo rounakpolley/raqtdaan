@@ -93,7 +93,7 @@
         type="text/javascript">
     </script>
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="100">
+<body>
     
     <div id="background-map"></div>
     
@@ -131,7 +131,7 @@
     </nav>    
 
     <div id="sidetray" class="sidenav">
-        <button id="donors"             type="button" class="btn btn-warning">Donors</button>
+        <button id="donors"             type="button" class="btn btn-warning sidenav-content">Donors</button>
          <div id="donors-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group"><!--hidden-->
           <button type="button" class="btn btn-primary">O-</button>
           <button type="button" class="btn btn-primary">O+</button>
@@ -143,19 +143,19 @@
           <button type="button" class="btn btn-primary">AB+</button>
         </div>
 
-        <button id="blood_banks"        type="button" class="btn btn-success">Blood Banks</button>
+        <button id="blood_banks"        type="button" class="btn btn-success sidenav-content">Blood Banks</button>
         <div id="blood_banks-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group">
           <button type="button" class="btn btn-primary">Link to blood banks</button>
         </div>
 
-        <button id="camps"              type="button" class="btn btn-info">Camps</button>
+        <button id="camps"              type="button" class="btn btn-info sidenav-content">Camps</button>
         <div id="camps-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group">
           <button type="button" class="btn btn-primary">Location of blood donation camps</button>
         </div>
-
-        <button id="request_for_blood"  type="button" class="btn btn-danger">Requests<br/>for blood</button>
+        
+        <button id="request_for_blood"  type="button" class="btn btn-danger sidenav-content">Existing<br/>requests</button>
         <div id="request_for_blood-contents" class="btn-group btn-group-lg sidetray-contents hidden" role="group">
-          <button type="button" class="btn btn-primary">Existing requests</button>
+          <button type="button" class="btn btn-primary">Requests for blood shown here but how?</button>
         </div>
     </div>
     

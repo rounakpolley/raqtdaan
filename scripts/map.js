@@ -1,4 +1,7 @@
-// AIzaSyCGAuXcfGc1ye7Tk85s1uLXi7Op4ak2gl8
+//api key = AIzaSyCGAuXcfGc1ye7Tk85s1uLXi7Op4ak2gl8
+//----------
+//		Code here is temporarily in map_markers.js
+//----------
 
 var map;
 function initMap(){
@@ -13,4 +16,3 @@ if (navigator.geolocation) {
          map.setCenter(initialLocation);
      });
 }
-

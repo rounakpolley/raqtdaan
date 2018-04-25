@@ -1,0 +1,10 @@
+Given dataset : bb.json - Though it is not in correct json format
+
+Using python script : script_selective.py
+Generated dataset_mapping.csv
+
+Then in is imported into mysql database
+with col names : sr_no,blood_bank_name,latitude,longitude,address,mobile_no
+
+Which is then converted to map_data.xml
+using php script : ./extra_scripts/xml2.php
