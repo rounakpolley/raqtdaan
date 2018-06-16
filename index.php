@@ -1,3 +1,5 @@
+<!-- un-comment 95 and comment line 94 to enable markers on the map-->
+
 <?php session_start();
     $login_err = false;
     require_once('dbconnection.php');
@@ -80,14 +82,17 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/home.css" type="text/css">
     <link rel="stylesheet" href="styles/responsive.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300|Oswald|Rokkitt|Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="templated-intensify/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/templated-intensify/assets/css/main.css" />
+    
     <script src="scripts/home.js" type="text/javascript"></script>
-    <!--<script src="scripts/map.js" type="text/javascript"></script>-->
-    <script src="scripts/map_markers.js" type="text/javascript"></script>
+    <script src="scripts/map.js" type="text/javascript"></script>
+    <!--<script src="scripts/map_markers.js" type="text/javascript"></script>-->
     <script async defer 
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGAuXcfGc1ye7Tk85s1uLXi7Op4ak2gl8&callback=initMap"
         type="text/javascript">
@@ -280,6 +285,11 @@
                 </ul>
             </div>
             <button type="submit" class="btn btn-danger">Send Request</button>
+            <ul>
+            <li>            
+                <a href="#" class="button fit">Small</a>
+            </li>
+            </ul>
             <!-- &nbsp;  &nbsp; Send Request &nbsp;  &nbsp; -->
         </form>
     </footer>
